@@ -15,18 +15,22 @@
             }
         </style>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <script type="text/javascript" src="js/Basic_js_test.js"></script>
+        
+
     </head>
     <body style="background-color: black;">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">네비게이션 바</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <img src="Image/LOGO.png" alt="Logo" width="200" height="60" class="d-inline-block align-text-top">
+                <a class="navbar-brand">네비게이션 바</a>
+                <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">홈</a>
+                    <a class="nav-link active" aria-current="page" href="https://www.leagueoflegends.com/ko-kr/">홈</a>
                   </li>
 
                   <li class="nav-item">
@@ -34,15 +38,15 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">챔피언</a>
+                    <a class="nav-link active" aria-current="page" href="https://www.leagueoflegends.com/ko-kr/champions/"> 챔피언 </a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">패치 노트 </a>
+                    <a class="nav-link active" aria-current="page" href="https://www.leagueoflegends.com/ko-kr/news/tags/patch-notes/">패치노트</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">새소식 </a>
+                    <a class="nav-link active" aria-current="page" href="https://www.leagueoflegends.com/ko-kr/news/">새소식</a>
                   </li>
 
                   <li class="nav-item dropdown">
@@ -50,10 +54,10 @@
                         고객지원 
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">게임 다운로드</a></li>
-                      <li><a class="dropdown-item" href="#">롤 커뮤니티</a></li>
+                      <li><a class="dropdown-item" href="https://www.leagueoflegends.com/ko-kr/download/">게임 다운로드</a></li>
+                      <li><a class="dropdown-item" href="https://www.leagueoflegends.com/ko-kr/news/community/">롤 커뮤니티</a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">깃 허브 페이지</a></li>
+                      <li><a class="dropdown-item" href="https://github.com/">깃 허브 페이지</a></li>
                     </ul>
                   </li>
 
@@ -62,8 +66,9 @@
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="검색하기" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">검색</button>
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" id="search_btn"  type="submit">검색</button>
+                  <script type="text/javascript" src="js/search.js"></script>
                 </form>
               </div>
             </div>
@@ -74,10 +79,10 @@
                 <a href="https://www.leagueoflegends.com/ko-kr/how-to-play/" target="_blank">게임 정보</a>  기본정보  챔피언  패치노트  새소식 등 (메뉴 정보 입력하기) </h3>
         </div> -->
         <div style="display: flex; justify-content: center;">
-            <a href="index.html" target="_blank"><img src="Image/Main.jpg" width="1200" height="768"></a>
+            <a href="index.html" target="_blank"><img src="Image/Main.jpg" class="img-fluid" width="1200" height="768"></a>
         </div>
         <div style="display: flex; justify-content: center;">
-            <table border="1">
+            <table border="1" class="table table-striped">
                 <caption>인기 캐릭터</caption>
                 <tbody>
                     <tr bgcolor="red">
