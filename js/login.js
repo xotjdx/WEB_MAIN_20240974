@@ -1,3 +1,4 @@
+
 function init()
 { // 로그인폼에쿠키에서가져온아이디입력
     const emailInput= document.getElementById('typeEmailX');
@@ -10,6 +11,10 @@ function init()
     }
     session_set(); // 세션생성
 }
+
+
+
+
 const check_xss = (input) => {
     // DOMPurify 라이브러리 로드 (CDN 사용)
     const DOMPurify = window.DOMPurify;
@@ -32,27 +37,24 @@ const check_xss = (input) => {
         document.cookie= escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "; path=/";
     }
     
-    function getCookie(name) 
+function getCookie(name) 
+{
+    var cookie = document.cookie;
+    console.log("쿠키를요청합니다.");
+    if (cookie != "") 
     {
-        var cookie = document.cookie;
-        console.log("쿠키를요청합니다.");
-        if (cookie != "") 
-        {
-            var cookie_array= cookie.split("; ");
-            for ( var index in cookie_array)
+        var cookie_array= cookie.split("; ");
+        for ( var index in cookie_array)
+            {
+                var cookie_name= cookie_array[index].split("=");
+                if (cookie_name[0] == "id") 
                 {
-                    var cookie_name= cookie_array[index].split("=");
-                    if (cookie_name[0] == "id") 
-                    {
-                        return cookie_name[1];
-                    }
+                    return cookie_name[1];
                 }
-        }
-        return ;
+            }
     }
-
-
-
+    return ;
+}
     
 const check_input = () => 
 {
@@ -62,6 +64,12 @@ const check_input = () =>
     const passwordInput = document.getElementById('typePasswordX');
     // 전역변수추가, 맨위위치
     const idsave_check= document.getElementById('idSaveCheck');
+    const payload = {
+        id: emailValue,
+        exp: Math.floor(Date.now() / 1000) + 3600 // 1시간(3600초)
+    };
+    const jwtToken= generateJWT(payload);
+
     const c = '아이디, 패스워드를 체크합니다';
     alert(c);
 
@@ -124,22 +132,13 @@ const check_input = () =>
     }     
     console.log('이메일:', emailValue);
     console.log('비밀번호:', passwordValue);
+
     session_set(); // 세션생성
+    localStorage.setItem('jwt_token', jwtToken);
     loginForm.submit();
 };
-document.getElementById("login_btn").addEventListener('click', check_input);
-function session_check() { //세션검사
-    if (sessionStorage.getItem("Session_Storage_test")) {
-    alert("이미로그인되었습니다.");
-    location.href='../login/index_login.html'; // 로그인된페이지로이동
-    }
-    }
-function session_del() 
-{//세션삭제
-    if (sessionStorage) {
-    sessionStorage.removeItem("Session_Storage_test");
-    alert('로그아웃버튼클릭확인: 세션스토리지를삭제합니다.');
-    } else {
-    alert("세션스토리지지원x");
-    }
-}
+
+
+
+
+

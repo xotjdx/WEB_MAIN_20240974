@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <html>
-
     <head>
         <meta charset="UTF-8">
         <title>로그인 화면</title>
@@ -20,7 +19,13 @@
         
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.5/purify.min.js" integrity="sha512-/CUtA84sWWqWEBejNrrtWa7Yc4cth3Ome2ymvCKOo9YcZ4sh98tndUy4LutE2xGcAgD4fyz16y+gSyJdGCB5ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script type="text/javascript" src="js/session.js"></script> 
+        <script type="text/javascript" src="../js/session.js" defer></script>
+        <script type="text/javascript" src="../js/crypto.js" defer></script> 
+        <script type="text/javascript" src="../js/jwt_token.js" defer></script>
+        <script type="text/javascript" src="js/Basic_js_test.js"></script>
+        <script type="text/javascript" src="js/data_type.js"></script>
+        <script type="text/javascript" src="js/pop_up.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body class="text-center" onload="init();">
         <section class="vh-100 gradient-custom">
@@ -54,8 +59,7 @@
                             </label>
                         </div>
         
-                        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5"  id="login_btn" type="button">Login</button>
-        
+                        <a href="login/index_login.html" button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5"  id="login_btn" type="button">Login</a>
                         <div class="d-flex justify-content-center text-center mt-4 pt-1">
                         <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
                         <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>

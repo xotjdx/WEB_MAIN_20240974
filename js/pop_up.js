@@ -39,11 +39,12 @@ function out(obj)
 function close_window() { // 함수 정의
     window.close(); // 윈도우 닫기
     }
-    function setCookie(name, value, expiredays) {
-        var date = new Date();
-        date.setDate(date.getDate() + expiredays);
-        document.cookie= escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "; path=/";
-        }
+function setCookie(name, value, expiredays) 
+{
+    var date = new Date();
+    date.setDate(date.getDate() + expiredays);
+    document.cookie= escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "; path=/" + ";SameSite=None; Secure";
+}
     
     function getCookie(name) 
     {
