@@ -1,6 +1,6 @@
 // JWT 비밀키(실제운영환경에서는복잡한키사용필수)
 const JWT_SECRET = "your_secret_key_here";
-function generateJWT(payload) 
+export function generateJWT(payload) 
 {
     // 1. 헤더생성및Base64 인코딩
     const header = { alg: "HS256", typ: "JWT" };
@@ -43,7 +43,7 @@ function isAuthenticated()
     return !!payload; // 페이로드유무로인증상태판단
 }
 
-function checkAuth() 
+export function checkAuth() 
 { // 인증검사수행
     const authenticated = isAuthenticated(); // 한번만검증호출
     if (authenticated) {

@@ -1,3 +1,4 @@
+import { session_set, session_get, session_check} from './session.js';
 function encodeByAES256(key, data)
 { //
     const cipher= CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {
@@ -16,7 +17,7 @@ function decodeByAES256(key, data)
     });
     return cipher.toString(CryptoJS.enc.Utf8);
 }
-function encrypt_text(password)
+export function encrypt_text(password)
 {
     const k = "key"; // 클라이언트키
     const rk= k.padEnd(32, " "); // AES256은key길이가32
@@ -25,7 +26,8 @@ function encrypt_text(password)
     return eb;
     console.log(eb);
 }
-function decrypt_text()
+
+export function decrypt_text()
 {
     const k = "key"; // 서버의키
     const rk= k.padEnd(32, " "); // AES256은key길이가32
